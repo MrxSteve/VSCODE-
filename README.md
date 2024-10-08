@@ -74,22 +74,22 @@ MinGW incluye `g++`, el compilador necesario para C++ en Windows.
             {
                 "label": "build",
                 "type": "shell",
-                "command": "g++",
+                "command": "C:/MinGW/bin/g++.exe",  // Asegúrate de que la ruta a g++ sea correcta
                 "args": [
-                    "-g",
-                    "${file}",
+                    "-g",  // Habilita la depuración
+                    "${file}",  // Archivo activo
                     "-o",
-                    "${fileDirname}/${fileBasenameNoExtension}.exe"
+                    "${fileDirname}/${fileBasenameNoExtension}.exe"  // Genera un ejecutable
                 ],
                 "group": {
                     "kind": "build",
                     "isDefault": true
                 },
-                "problemMatcher": ["$gcc"],
-                "detail": "Tarea generada automáticamente por VS Code"
+                "problemMatcher": ["$gcc"]
             }
-        ]
+    ]
     }
+
 
 ### 3.3 (Opcional) Configurar la depuración en VS Code:
 - Si deseas depurar tu código, ve a **Run > Add Configuration**.
