@@ -31,3 +31,32 @@ MinGW incluye `g++`, el compilador necesario para C++ en Windows.
 2. Escribe el siguiente comando para verificar si `g++` está correctamente instalado:
    ```bash
    g++ --version
+
+## Paso 2: Descargar e instalar VS Code
+
+### 2.1 Descargar Visual Studio Code:
+- Ve a la página oficial de Visual Studio Code: [https://code.visualstudio.com/](https://code.visualstudio.com/).
+- Haz clic en **Download for Windows** y descarga el instalador.
+- Abre el instalador y sigue las instrucciones para instalar Visual Studio Code en tu computadora.
+
+### 2.2 Instalar la extensión de C++ en Visual Studio Code:
+- Abre **Visual Studio Code**.
+- Haz clic en el ícono de **Extensiones** en la barra lateral izquierda (o presiona `Ctrl + Shift + X`).
+- En el cuadro de búsqueda, escribe `C/C++`.
+- Selecciona la extensión **C/C++** desarrollada por Microsoft y haz clic en **Instalar**.
+
+## Paso 3: Configurar tareas de compilación y depuración
+
+### 3.1 Crear un archivo de C++:
+- Abre **Visual Studio Code**.
+- Crea un nuevo archivo de C++ con el nombre `hola_mundo.cpp`.
+- Agrega el siguiente código de ejemplo:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hola mundo" << endl;
+    return 0;
+}
