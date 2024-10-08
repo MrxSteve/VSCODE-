@@ -52,14 +52,14 @@ MinGW incluye `g++`, el compilador necesario para C++ en Windows.
 - Crea un nuevo archivo de C++ con el nombre `hola_mundo.cpp`.
 - Agrega el siguiente código de ejemplo:
 
-```cpp
-#include <iostream>
-using namespace std;
+    ```cpp
+    #include <iostream>
+    using namespace std;
 
-int main() {
-    cout << "Hola mundo" << endl;
-    return 0;
-}
+    int main() {
+        cout << "Hola mundo" << endl;
+        return 0;
+    }
 
 ### 3.2 Configurar tareas de compilación en VS Code:
 - Presiona `Ctrl + Shift + B` o ve a **Terminal > Configure Default Build Task**.
@@ -67,29 +67,29 @@ int main() {
 - Esto creará automáticamente un archivo de configuración llamado `tasks.json` en la carpeta `.vscode` de tu proyecto.
 - Si no se crea el archivo automáticamente, puedes crear manualmente la carpeta `.vscode` en el directorio de tu proyecto y dentro de esta, crear un archivo llamado `tasks.json` con el siguiente contenido:
 
-```json
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "build",
-            "type": "shell",
-            "command": "g++",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.exe"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": ["$gcc"],
-            "detail": "Tarea generada automáticamente por VS Code"
-        }
-    ]
-}
+    ```json
+    {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "build",
+                "type": "shell",
+                "command": "g++",
+                "args": [
+                    "-g",
+                    "${file}",
+                    "-o",
+                    "${fileDirname}/${fileBasenameNoExtension}.exe"
+                ],
+                "group": {
+                    "kind": "build",
+                    "isDefault": true
+                },
+                "problemMatcher": ["$gcc"],
+                "detail": "Tarea generada automáticamente por VS Code"
+            }
+        ]
+    }
 
 ### 3.3 (Opcional) Configurar la depuración en VS Code:
 - Si deseas depurar tu código, ve a **Run > Add Configuration**.
