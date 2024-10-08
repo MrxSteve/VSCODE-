@@ -60,3 +60,54 @@ int main() {
     cout << "Hola mundo" << endl;
     return 0;
 }
+
+### 3.2 Configurar tareas de compilación en VS Code:
+- Presiona `Ctrl + Shift + B` o ve a **Terminal > Configure Default Build Task**.
+- Selecciona la opción **"g++ build active file"**.
+- Esto creará automáticamente un archivo de configuración llamado `tasks.json` en la carpeta `.vscode` de tu proyecto.
+- Si no se crea el archivo automáticamente, puedes crear manualmente la carpeta `.vscode` en el directorio de tu proyecto y dentro de esta, crear un archivo llamado `tasks.json` con el siguiente contenido:
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Tarea generada automáticamente por VS Code"
+        }
+    ]
+}
+
+### 3.3 (Opcional) Configurar la depuración en VS Code:
+- Si deseas depurar tu código, ve a **Run > Add Configuration**.
+- Selecciona la opción **C++ (gdb)**.
+- Esto generará un archivo `launch.json` que permitirá configurar puntos de interrupción y depurar el programa en Visual Studio Code.
+
+## Paso 4: Compilar y ejecutar el programa
+
+### 4.1 Compilar el programa:
+- Guarda tu archivo `hola_mundo.cpp`.
+- Presiona `Ctrl + Shift + B` para compilar el programa.
+- Si la compilación es exitosa, se generará un archivo ejecutable `.exe` en el mismo directorio que tu archivo de código fuente.
+
+### 4.2 Ejecutar el programa compilado:
+- Abre el **terminal de Visual Studio Code** (o el **Símbolo del sistema** en Windows).
+- Navega al directorio donde se generó el archivo `.exe` utilizando el comando `cd`.
+- Ejecuta el programa escribiendo el siguiente comando:
+
+```bash
+./hola_mundo.exe
+
